@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     background-color: var(--dark)
 }
@@ -25,25 +25,15 @@ h1 {
 nav {
     display: flex;
     flex-direction: row;
-    background-color: #F6EB80;
     justify-content: flex-end;
+    background-color: #F6EB80;
+  }
+  
+  nav a {
     color: var(--navlink-color);
-}
-
-nav ul {
-    width: 30%;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-nav a {
-    color: var(--navlink-color);
-    text-decoration: none;
     padding: 14px 20px;
-    text-align: center;
-}
+    text-decoration: none;
+  }
 
 main {
     display: flex;
@@ -51,25 +41,32 @@ main {
     flex-wrap: wrap;
     flex-grow: 1;
   }
-  
-  aside {
+ 
+aside {
     flex: 1;
     background-color: var(--light);
+    border-right: var(--dark) solid;
+    border-width: 4px;
     padding: 20px;
     text-align: left;
   }
-  
 
 h2 {
-    font-size: 200%;
-    margin: 2% 0;
+  font-size: 200%;
 }
 
-.portfolio {
+.about.me p {
+  flex: 4;
+  background-color: var(--light);
+  padding: 50px;
+}
+
+.my-work {
     flex: 4;
     background-color: var(--light);
     padding: 50px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -77,10 +74,9 @@ h2 {
 
 .examples{
     position: relative;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 50px;
-    padding: 10px;
+    border-style: hidden;
+    border-width: 0px;
+    padding: 0;
     flex: 1 0 300px;
     margin: 20px;
 }
@@ -97,18 +93,23 @@ h2 {
     left: 0px;
     width: 160px;
     height: 25px;
-    border: 50px 50px 0px 0px;
     padding: 20px;
-  }
-  
-.examples p {
-    text-align: center;
   }
 
 .examples header:hover {
     background-color: var(--light);
     color: var(--dark)
   }
+
+#main-example {
+    flex: 6 0 600px;
+    margin: 20px;
+}
+
+#main-example img {
+    width: 96%;
+    object-fit: cover;
+}
 
 footer {
     width: 100%;
@@ -119,8 +120,8 @@ footer {
     margin-top: auto;
   }
 
-footer a {
-    color: var(--navlink-color);
+footer li {
+    color: var(--light);
     text-decoration: none;
 }
 
