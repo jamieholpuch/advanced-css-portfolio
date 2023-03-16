@@ -5,10 +5,7 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 header {
@@ -29,117 +26,159 @@ nav {
     background-color: #F6EB80;
   }
   
-  nav a {
+nav a {
     color: var(--navlink-color);
     padding: 14px 20px;
     text-decoration: none;
   }
 
-main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-grow: 1;
-  }
- 
-aside {
-    flex: 1;
-    background-color: var(--light);
-    border-right: var(--dark) solid;
-    border-width: 4px;
-    padding: 20px;
-    text-align: left;
-  }
-
-h2 {
-  font-size: 200%;
+.about-me {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content:flex-start;
 }
 
-.about.me p {
-  flex: 4;
-  background-color: var(--light);
+.content-header {
+  font-size: 300%;
+  border-right: var(--dark) solid;
+  border-width: 4px;
   padding: 50px;
+  margin: 50px;
+}
+
+.paragraph {
+flex-grow: 1;
+width: 400px;
 }
 
 .my-work {
-    flex: 4;
-    background-color: var(--light);
-    padding: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 15px;
 }
 
-.examples{
-    position: relative;
-    border-style: hidden;
-    border-width: 0px;
-    padding: 0;
-    flex: 1 0 300px;
-    margin: 20px;
+.my-work .content-header {
+  height: 200px;
 }
 
-.examples img {
-    width: 400px;
-    height: 200px;
+.projects {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 20px;
 }
 
-.examples header {
-    color: var(--light);
-    position: absolute;
-    top: 120px;
-    left: 0px;
-    width: 160px;
-    height: 25px;
-    padding: 20px;
+.projects img {
+  flex-grow: 1;
+  width: 400px;
+  height: 200px;
+}
+
+.placeholder {
+  align-items: flex-start;
+  width: 385px;
+  height: 200px;
+}
+
+.projects header {
+  color: var(--light);
+  position: absolute;
+  top: 110px;
+  width: 160px;
+  height: 25px;
+  padding: 20px;
   }
 
-.examples header:hover {
-    background-color: var(--light);
-    color: var(--dark)
-  }
+.image {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.projects:hover .image {
+  opacity: 0.3;
+}
 
 #main-example {
-    flex: 6 0 600px;
-    margin: 20px;
+  align-self: flex-start;
+  margin: 20px;
 }
 
-#main-example img {
-    width: 96%;
-    object-fit: cover;
+#main-example img { 
+  width: 835px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#main-example header {
+  color: var(--light);
+  position: absolute;
+  top: 260px;
+  width: 160px;
+  height: 25px;
+  padding: 20px;
+}
+
+.contact-me {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content:flex-start;
+  width: 150px;
+  margin: 25px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  min-width: 300px;
+  justify-content: space-around;
+  -ms-flex-align: start;
+  align-content: center;
+  align-items:flex-start;
+  padding: 20px;
+  list-style-type: none;
+}
+
+li {
+  font-size: 125%;
+  padding: 50px;
+  color: var(--dark)
 }
 
 footer {
-    width: 100%;
-    bottom: 0;
-    padding: 20px;
-    text-align: left;
-    background-color: var(--dark);
-    margin-top: auto;
-  }
-
-footer li {
-    color: var(--light);
-    text-decoration: none;
+  width: 100%;
+  bottom: 0;
+  padding: 20px;
+  text-align: left;
+  background-color: var(--dark);
+  margin-top: auto;
 }
 
-footer ul {
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-    align-items:flex-start;
-    justify-content: space-around;
-    padding: 20px;
+@media screen and (max-width: 992px) {
+  .projects {
+    width: 50%;
+  }
+  .nav .ul {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    main,
-    nav {
-      flex-direction: column;
-    }
+  .projects {
+    width: 100%;
   }
-
+  .nav .ul {
+    flex-direction: column;
+  }
+}
 
